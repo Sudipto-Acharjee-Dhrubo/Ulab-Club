@@ -1,0 +1,67 @@
+/* Minimal modern styles - Light Theme */
+:root {
+  --bg: #ffffff;       /* White background */
+  --card: #f4f4f9;     /* Light card background */
+  --text: #1a1a1a;     /* Dark text */
+  --muted: #555555;    /* Muted gray text */
+  --brand: #0066cc;    /* Primary brand color (blue) */
+  --accent: #009966;   /* Accent color (green) */
+  --error: #cc0000;    /* Error red */
+  --success: #2e8b57;  /* Success green */
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+a { color: var(--brand); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 1rem; }
+
+header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+header h1 { margin: 0; font-size: 1.5rem; }
+nav a { margin-right: 1rem; }
+nav a.btn { margin-left: .5rem; }
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  margin: 1rem 0;
+}
+.card.info { border: 1px solid var(--brand); }
+.card.error { border: 1px solid var(--error); }
+.card.success { border: 1px solid var(--success); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+
+.field { display: grid; gap: .5rem; margin-bottom: .75rem; }
+.field label { color: var(--muted); font-size: .9rem; }
+.field input, .field select {
+  padding: .7rem .8rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: var(--text);
+}
+
+.actions { margin-top: .5rem; display: flex; gap: .5rem; }
+
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn.outline { background: transparent; border: 1px solid var(--brand); color: var(--brand); }
+
+footer { margin-top: 2rem; text-align: center; color: var(--muted); }
